@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Now - Brew Cafe</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <h2 class="logo-text">☕Brew Cafe</h2>
+            </a>
+            <div class="nav-actions">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <a href="index.html" class="back-btn">Back to Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Order Section -->
+        <section class="order-section">
+            <div class="container">
+                <h1 class="page-title">Order Your Favorites</h1>
+                
+                <!-- Category Filter -->
+                <div class="category-filter">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="hot-beverages">Hot Beverages</button>
+                    <button class="filter-btn" data-category="cold-beverages">Cold Beverages</button>
+                    <button class="filter-btn" data-category="refreshments">Refreshments</button>
+                    <button class="filter-btn" data-category="desserts">Desserts</button>
+                    <button class="filter-btn" data-category="combos">Special Combos</button>
+                    <button class="filter-btn" data-category="snacks">Burger & Fries</button>
+                </div>
+
+                <!-- Menu Items Grid -->
+                <div class="menu-grid" id="menuGrid">
+                    <!-- Items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Shopping Cart Sidebar -->
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h3>Your Order</h3>
+                <button class="close-cart" onclick="toggleCart()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: ₹<span id="cartTotal">0</span></strong>
+                </div>
+                <button class="checkout-btn" onclick="proceedToCheckout()">
+                    Proceed to Checkout
+                </button>
+            </div>
+        </div>
+
+        <!-- Checkout Modal -->
+        <div class="modal-overlay" id="checkoutModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Checkout</h3>
+                    <button class="close-modal" onclick="closeCheckout()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <form class="checkout-form" id="checkoutForm">
+                    <div class="form-group">
+                        <label for="customerName">Full Name *</label>
+                        <input type="text" id="customerName" name="customerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerEmail">Email *</label>
+                        <input type="email" id="customerEmail" name="customerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">Phone Number *</label>
+                        <input type="tel" id="customerPhone" name="customerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryAddress">Delivery Address *</label>
+                        <textarea id="deliveryAddress" name="deliveryAddress" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderNotes">Special Instructions</label>
+                        <textarea id="orderNotes" name="orderNotes" rows="2" placeholder="Any special requests..."></textarea>
+                    </div>
+                    <div class="order-summary">
+                        <h4>Order Summary</h4>
+                        <div id="checkoutItems"></div>
+                        <div class="checkout-total">
+                            <strong>Total: ₹<span id="checkoutTotal">0</span></strong>
+                        </div>
+                    </div>
+                    <button type="submit" class="place-order-btn">
+                        <i class="fas fa-credit-card"></i>
+                        Place Order
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div class="modal-overlay success-modal" id="successModal">
+            <div class="modal-content">
+                <div class="success-content">
+                    <i class="fas fa-check-circle success-icon"></i>
+                    <h3>Order Placed Successfully!</h3>
+                    <p>Thank you for your order. We'll contact you shortly to confirm the details.</p>
+                    <p><strong>Order ID: <span id="orderNumber"></span></strong></p>
+                    <button class="continue-btn" onclick="closeSuccess()">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script1.js"></script>
+</body>
+</html>
