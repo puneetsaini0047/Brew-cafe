@@ -7,7 +7,7 @@ const menuItems = [
         category: "hot-beverages",
         price: 120,
         description: "Rich and bold shot of pure coffee perfection",
-        image: "images/espresso.jpg"
+        image: "images/espresso.jpeg"
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const menuItems = [
         category: "hot-beverages",
         price: 180,
         description: "Creamy steamed milk with rich espresso and foam",
-        image: "images/cappuccino.jpg"
+        image: "images/cap.jpeg"
     },
     {
         id: 3,
@@ -23,7 +23,7 @@ const menuItems = [
         category: "hot-beverages",
         price: 200,
         description: "Smooth espresso with steamed milk and light foam",
-        image: "images/latte.jpg"
+        image: "images/latto.jpeg"
     },
     {
         id: 4,
@@ -31,7 +31,7 @@ const menuItems = [
         category: "hot-beverages",
         price: 160,
         description: "Dark roasted coffee with intense flavor",
-        image: "images/french-roast.jpg"
+        image: "images/Roster.jpeg"
     },
     {
         id: 5,
@@ -39,7 +39,7 @@ const menuItems = [
         category: "hot-beverages",
         price: 150,
         description: "Rich and creamy chocolate drink topped with whipped cream",
-        image: "images/hot-chocolate.jpg"
+        image: "images/hot-choco.jpeg"
     },
     
     // Cold Beverages
@@ -49,7 +49,7 @@ const menuItems = [
         category: "cold-beverages",
         price: 140,
         description: "Refreshing cold brew coffee served over ice",
-        image: "images/iced-coffee.jpg"
+        image: "images/iced_Coffee.jpeg"
     },
     {
         id: 7,
@@ -57,7 +57,7 @@ const menuItems = [
         category: "cold-beverages",
         price: 220,
         description: "Blended coffee drink with ice and whipped cream",
-        image: "images/frappuccino.jpg"
+        image: "images/Frappuccino.jpeg"
     },
     {
         id: 8,
@@ -65,7 +65,7 @@ const menuItems = [
         category: "cold-beverages",
         price: 160,
         description: "Smooth and less acidic coffee brewed cold",
-        image: "images/cold-brew.jpg"
+        image: "images/cold-brew-Coffee.jpeg"
     },
     {
         id: 9,
@@ -73,7 +73,7 @@ const menuItems = [
         category: "cold-beverages",
         price: 190,
         description: "Chilled espresso with cold milk and ice",
-        image: "images/iced-latte.jpg"
+        image: "images/iced-Latte.jpeg"
     },
     
     // Refreshments
@@ -83,7 +83,7 @@ const menuItems = [
         category: "refreshments",
         price: 120,
         description: "Freshly squeezed orange juice packed with vitamins",
-        image: "images/orange-juice.jpg"
+        image: "images/oranger-juice.jpeg"
     },
     {
         id: 11,
@@ -91,7 +91,7 @@ const menuItems = [
         category: "refreshments",
         price: 100,
         description: "Tangy and refreshing homemade lemonade",
-        image: "images/lemonade.jpg"
+        image: "images/Lemonade.jpeg"
     },
     {
         id: 12,
@@ -99,7 +99,7 @@ const menuItems = [
         category: "refreshments",
         price: 180,
         description: "Blended fresh fruits with yogurt and honey",
-        image: "images/smoothie.jpg"
+        image: "images/fruit-smoothy.jpeg"
     },
     {
         id: 13,
@@ -107,7 +107,7 @@ const menuItems = [
         category: "refreshments",
         price: 90,
         description: "Refreshing iced tea with lemon and mint",
-        image: "images/iced-tea.jpg"
+        image: "images/Iced-Tea.jpeg"
     },
     
     // Desserts
@@ -117,7 +117,7 @@ const menuItems = [
         category: "desserts",
         price: 250,
         description: "Rich chocolate cake with creamy frosting",
-        image: "images/chocolate-cake.jpg"
+        image: "images/choco-cake.jpeg"
     },
     {
         id: 15,
@@ -125,7 +125,7 @@ const menuItems = [
         category: "desserts",
         price: 280,
         description: "Creamy New York style cheesecake",
-        image: "images/cheesecake.jpg"
+        image: "images/Cheesecake.jpeg"
     },
     {
         id: 16,
@@ -133,7 +133,7 @@ const menuItems = [
         category: "desserts",
         price: 320,
         description: "Italian coffee-flavored dessert with mascarpone",
-        image: "images/tiramisu.jpg"
+        image: "images/Tiramisu.png"
     },
     {
         id: 17,
@@ -141,7 +141,7 @@ const menuItems = [
         category: "desserts",
         price: 120,
         description: "Buttery and flaky French pastry",
-        image: "images/croissant.jpg"
+        image: "images/Croissant.png"
     },
     {
         id: 18,
@@ -149,7 +149,7 @@ const menuItems = [
         category: "desserts",
         price: 100,
         description: "Freshly baked muffin with blueberries",
-        image: "images/muffin.jpg"
+        image: "images/Muffin.png"
     },
     
     // Special Combos
@@ -159,7 +159,7 @@ const menuItems = [
         category: "combos",
         price: 350,
         description: "Your choice of coffee with a slice of cake",
-        image: "images/coffee-cake-combo.jpg"
+        image: "images/Coffee-cake-combo.png"
     },
     {
         id: 20,
@@ -167,7 +167,7 @@ const menuItems = [
         category: "combos",
         price: 280,
         description: "Coffee with croissant and fresh juice",
-        image: "images/breakfast-combo.jpg"
+        image: "images/breakfast-combo.png"
     },
     {
         id: 21,
@@ -175,7 +175,7 @@ const menuItems = [
         category: "combos",
         price: 400,
         description: "Latte with sandwich and dessert",
-        image: "images/afternoon-combo.jpg"
+        image: "images/afternoon-special.png"
     },
     
     // Burger & Fries
@@ -185,7 +185,7 @@ const menuItems = [
         category: "snacks",
         price: 280,
         description: "Juicy beef patty with lettuce, tomato, and cheese",
-        image: "images/classic-burger.jpg"
+        image: "images/classic-burger.png"
     },
     {
         id: 23,
@@ -193,7 +193,7 @@ const menuItems = [
         category: "snacks",
         price: 260,
         description: "Grilled chicken breast with fresh vegetables",
-        image: "images/chicken-burger.jpg"
+        image: "images/chicken-burger.png"
     },
     {
         id: 24,
@@ -209,7 +209,7 @@ const menuItems = [
         category: "snacks",
         price: 120,
         description: "Golden crispy fries with our special seasoning",
-        image: "images/french-fries.jpg"
+        image: "images/french-fries.png"
     },
     {
         id: 26,
@@ -217,7 +217,7 @@ const menuItems = [
         category: "snacks",
         price: 140,
         description: "Crispy battered onion rings with dipping sauce",
-        image: "images/onion-rings.jpg"
+        image: "images/onion rings.jpg"
     }
 ];
 
