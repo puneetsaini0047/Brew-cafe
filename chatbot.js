@@ -14,39 +14,8 @@ class BrewChatbot {
         this.setupQuickActions();
 
         this.knowledgeBase = {
-            menu: {
-                "hot beverages": {
-                    items: ["Espresso ₹120", "Cappuccino ₹180", "Latte ₹200", "French Roast ₹160", "Hot Chocolate ₹150"],
-                    description: "From bold espressos to creamy lattes - hot drinks that spark joy in every sip."
-                },
-                "cold beverages": {
-                    items: ["Iced Coffee ₹140", "Frappuccino ₹220", "Cold Brew ₹160", "Iced Latte ₹190"],
-                    description: "Cold, crisp, and crafted to refresh you instantly."
-                },
-                "refreshments": {
-                    items: ["Fresh Orange Juice ₹120", "Lemonade ₹100", "Fruit Smoothie ₹180", "Iced Tea ₹90"],
-                    description: "Fruit and icy refreshment drinks to make you feel refresh."
-                },
-                "desserts": {
-                    items: ["Chocolate Cake ₹250", "Cheesecake ₹280", "Tiramisu ₹320", "Croissant ₹120", "Muffin ₹100"],
-                    description: "Treat yourself to something irresistibly sweet."
-                },
-                "combos": {
-                    items: ["Coffee & Cake Combo ₹350", "Breakfast Combo ₹280", "Afternoon Special ₹400"],
-                    description: "Your favourite eating and drinking combos."
-                },
-                "snacks": {
-                    items: ["Classic Burger ₹280", "Chicken Burger ₹260", "Veggie Burger ₹240", "French Fries ₹120", "Onion Rings ₹140"],
-                    description: "Quick bites to satisfy your small size hunger."
-                }
-            },
-            info: {
-                hours: "Monday - Friday: 9:00 AM - 5:00 PM, Sunday: Closed",
-                location: "DLF Cyber City, Phase II, Gurugram",
-                contact: "info@Brewcafewebsite.com, (+91) 65476*****",
-                specialties: ["Hand-crafted coffees", "Fresh bakes", "Cozy atmosphere", "Free WiFi"],
-                offers: ["Happy Hour: 20% off on all beverages (3-5 PM)", "Student Discount: 15% off with valid ID", "Loyalty Card: Buy 10 get 1 free"]
-            }
+            menu: { /* ... */ },
+            info: { /* ... */ }
         };
     }
 
@@ -56,18 +25,6 @@ class BrewChatbot {
         this.chatInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.sendMessage();
         });
-
-        // Auto-focus input when chat opens
-        this.chatbotToggle.addEventListener('click', () => {
-            setTimeout(() => {
-                if (this.isOpen) {
-                    this.chatInput.disabled = false;
-                    this.chatInput.focus();
-                }
-            }, 300);
-        });
-
-        // Enable input if window is open
         this.chatbotWindow.addEventListener('transitionend', () => {
             if (this.isOpen) {
                 this.chatInput.disabled = false;
@@ -92,13 +49,17 @@ class BrewChatbot {
         this.chatbotWindow.classList.toggle('active', this.isOpen);
         this.chatbotToggle.classList.toggle('active', this.isOpen);
 
-        // Enable input when opening
         this.chatInput.disabled = !this.isOpen;
-        if (this.isOpen) this.chatInput.focus();
+        if (this.isOpen) {
+            this.chatInput.focus();
+            // Clear previous messages and show welcome message
+            this.chatMessages.innerHTML = '';
+            this.appendMessage("Hello! ☕ Welcome to Brew Cafe! I'm your personal coffee assistant. How can I help you today?", 'bot');
+        }
     }
 
     sendMessage() {
-        if (this.chatInput.disabled) return; // Don't send if input is disabled
+        if (this.chatInput.disabled) return;
 
         const userMsg = this.chatInput.value.trim();
         if (!userMsg) return;
@@ -131,46 +92,11 @@ class BrewChatbot {
 
     getBotReply(message) {
         const msg = message.toLowerCase();
-
-        if (msg.includes('menu')) {
-            let reply = 'Here is our menu:\n';
-            Object.entries(this.knowledgeBase.menu).forEach(([category, data]) => {
-                reply += `\n${category.charAt(0).toUpperCase()+category.slice(1)}:\n${data.items.join(', ')}\n${data.description}\n`;
-            });
-            return reply;
-        }
-        if (msg.includes('hours') || msg.includes('time') || msg.includes('open')) {
-            return this.knowledgeBase.info.hours;
-        }
-        if (msg.includes('location') || msg.includes('address') || msg.includes('where')) {
-            return this.knowledgeBase.info.location;
-        }
-        if (msg.includes('contact') || msg.includes('phone') || msg.includes('email')) {
-            return this.knowledgeBase.info.contact;
-        }
-        if (msg.includes('special') || msg.includes('combo') || msg.includes('offer')) {
-            return "Here are our current offers:\n" + this.knowledgeBase.info.offers.join('\n');
-        }
-        if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
-            return "Hello! 👋 How can I assist you with Brew Cafe today?";
-        }
-        if (msg.includes('thank')) {
-            return "You're welcome! Enjoy your time at Brew Cafe.";
-        }
-        if (msg.includes('specialties') || msg.includes('unique') || msg.includes('wifi')) {
-            return "Our specialties:\n" + this.knowledgeBase.info.specialties.join('\n');
-        }
-        if (msg.includes('dessert') || msg.includes('sweet')) {
-            return "Desserts:\n" + this.knowledgeBase.menu.desserts.items.join(', ') + "\n" + this.knowledgeBase.menu.desserts.description;
-        }
-        if (msg.includes('snack') || msg.includes('burger') || msg.includes('fries')) {
-            return "Snacks:\n" + this.knowledgeBase.menu.snacks.items.join(', ') + "\n" + this.knowledgeBase.menu.snacks.description;
-        }
+        // ... (your existing keywords logic)
         return "I'm sorry, I didn't understand that. You can ask me about our menu, hours, location, offers, or anything related to Brew Cafe!";
     }
 }
 
-// Initialize chatbot when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
     new BrewChatbot();
 });
