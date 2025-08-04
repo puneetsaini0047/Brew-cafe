@@ -1,6 +1,6 @@
 A responsive and feature-rich website for a modern coffee shop, complete with a dynamic menu, a full online ordering system, and an interactive AI chatbot for customer assistance.
 
-**[Live Demo]** : https://lnkd.in/gs-bYCqc
+**[Live Demo]** : https://brew-cafee.netlify.app/
 
 
 ## About The Project
